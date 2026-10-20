@@ -234,8 +234,8 @@ Conversely, it is easy to see that any $vx$ that satisfies the above constraints
 
 = Practice problems
 
-#exercise[Kuhn's theorem fails without perfect recall][
-  Kuhn's theorem assumes that the game has perfect recall (@def:perfect-recall). Show that both directions of the theorem can fail without this assumption. That is, give:
+#exercise[
+  Kuhn's theorem assumes that the game has perfect recall (@def:perfect-recall). Prove that both directions of the theorem can fail without perfect recall. That is, give:
   - a game where some normal-form strategy induces a distribution over terminal nodes that no behavioral strategy can induce, and
   - a game where some behavioral strategy induces a distribution over terminal nodes that no normal-form strategy can induce.
 ] <ex:kuhn-imperfect-recall>
