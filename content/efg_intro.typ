@@ -236,14 +236,13 @@ Conversely, it is easy to see that any $vx$ that satisfies the above constraints
 
 #exercise[
   Kuhn's theorem assumes that the game has perfect recall (@def:perfect-recall). Prove that both directions of the theorem can fail without perfect recall. That is, give:
-  - a game where some normal-form strategy induces a distribution over terminal nodes that no behavioral strategy can induce, and
-  - a game where some behavioral strategy induces a distribution over terminal nodes that no normal-form strategy can induce.
+  - a game where some normal-form strategy induces a distribution over terminal nodes that no behavioral strategy can produce, and
+  - a game where some behavioral strategy induces a distribution over terminal nodes that no normal-form strategy can produce.
 ] <ex:kuhn-imperfect-recall>
 
-#solution[
-  Both games below have a single player.
+#proof[
 
-  *A normal-form strategy that no behavioral strategy can copy.* The player first chooses $upsans(L)$ or $upsans(R)$ at information set $upsans(A)$. Then the player chooses $upsans(L)$ or $upsans(R)$ again at information set $upsans(B)$, without remembering the first choice. So $upsans(B)$ contains two histories: one after $upsans(L)$ and one after $upsans(R)$. The player's past actions differ between these two histories, so the player does not have perfect recall. We name the four terminal nodes by the two choices made: $upsans("LL")$, $upsans("LR")$, $upsans("RL")$, and $upsans("RR")$.
+  *A normal-form strategy that no behavioral strategy can copy.* A player first chooses $upsans(L)$ or $upsans(R)$ at information set $upsans(A)$. Then the player chooses $upsans(L)$ or $upsans(R)$ again at information set $upsans(B)$, without remembering the first choice. So $upsans(B)$ contains two histories: one after $upsans(L)$ and one after $upsans(R)$. The player's past actions differ between these two histories, so the player does not have perfect recall. We name the 4 terminal nodes as such: $upsans("LL")$, $upsans("LR")$, $upsans("RL")$, and $upsans("RR")$.
 
   Consider the normal-form strategy that plays $(upsans(L), upsans(L))$ with probability $1/2$ and $(upsans(R), upsans(R))$ with probability $1/2$. It reaches $upsans("LL")$ and $upsans("RR")$ with probability $1/2$ each, and never reaches $upsans("LR")$ or $upsans("RL")$.
 
@@ -252,9 +251,9 @@ Conversely, it is easy to see that any $vx$ that satisfies the above constraints
   - $upsans("LR")$ with probability $p (1 - q)$,
   - $upsans("RL")$ with probability $(1 - p) q$,
   - $upsans("RR")$ with probability $(1 - p)(1 - q)$.
-  To never reach $upsans("LR")$, we need $p = 0$ or $q = 1$. If $p = 0$, then $upsans("LL")$ is reached with probability $0$, not $1/2$. If $q = 1$, then $upsans("RR")$ is reached with probability $0$, not $1/2$. So no behavioral strategy induces the same distribution. The reason is that a behavioral strategy randomizes again at $upsans(B)$, so it cannot make the second choice match the first.
+  To never reach $upsans("LR")$, we need $p = 0$ or $q = 1$. If $p = 0$, then $upsans("LL")$ is reached with probability $0$, not $1/2$. If $q = 1$, then $upsans("RR")$ is reached with probability $0$, not $1/2$. So no behavioral strategy produced the same distribution. The reason is that a behavioral strategy randomizes again at $upsans(B)$, so it cannot make the second choice match the first.
 
-  *A behavioral strategy that no normal-form strategy can copy.* This is the _absent-minded driver_ game. A driver on a highway passes two exits that look the same, so the driver cannot tell which one they are at. At each exit, the driver either exits ($upsans(E)$) or continues ($upsans(C)$). The game has one information set $I$ with two histories: the first exit, and the second exit (reached after playing $upsans(C)$). Before the first exit the player has played no actions, while before the second exit they have played $upsans(C)$, so the player does not have perfect recall. There are three terminal nodes: $z_1$ (exit at the first exit), $z_2$ (exit at the second exit), and $z_3$ (continue past both).
+  *A behavioral strategy that no normal-form strategy can copy.* This is the absent-minded driver game. A driver on a highway passes two exits that look the same, so the driver cannot tell which one they are at. At each exit, the driver either exits ($upsans(E)$) or continues ($upsans(C)$). The game has one information set $I$ with two histories: the first exit, and the second exit (reached after playing $upsans(C)$). Before the first exit the player has played no actions, while before the second exit they have played $upsans(C)$, so the player does not have perfect recall. There are three terminal nodes: $z_1$ (exit at the first exit), $z_2$ (exit at the second exit), and $z_3$ (continue past both).
 
   A pure strategy picks one action at $I$ and must play it at both exits. Playing $upsans(E)$ always reaches $z_1$, and playing $upsans(C)$ always reaches $z_3$. So every normal-form strategy, being a mix of these two, reaches $z_2$ with probability $0$.
 
